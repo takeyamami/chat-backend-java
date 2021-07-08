@@ -24,8 +24,8 @@ public class Talk implements Serializable {
 	private String created_at;
 	
     @OneToOne
-    @JoinColumn(name="room_id")
-    private Room room;
+    @JoinColumn(name="uid")
+    private User user;
 
 
 	/**
