@@ -1,23 +1,32 @@
 package com.example.api;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "talks")
-public class Talk {
+public class Talk implements Serializable {
 
 	@Id
 	@Column(name = "tid")
 	private long tid;
 	@Column(name = "rid")
 	private long rid;
-	@Column(name = "uid")
-	private long uid;
 	@Column(name = "message")
 	private String message;
+	@Column(name = "created_at")
+	private String created_at;
+	
+    @OneToOne
+    @JoinColumn(name="room_id")
+    private Room room;
+
 
 	/**
 	 * デフォルトコンストラクタ
