@@ -7,49 +7,47 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
 
 	@Id
+	@Getter
+	@Setter
 	@Column(name = "uid")
 	private long uid;
-	@Column(name = "username")
-	private String username;
-
+	@Getter
+	@Setter
+	@Column(name = "name")
+	private String name;
 
 	/**
 	 * デフォルトコンストラクタ
 	 */
 	public User() {
 		this.uid = 0;
-		this.username = "";
+		this.name = "";
 	}
 
 	/**
 	 * コンストラクタ
 	 * 
 	 * @param uid
-	 * @param username
+	 * @param name
 	 */
-	public User(long uid, String username) {
+	public User(long uid, String name) {
 		this.uid = uid;
-		this.username = username;
+		this.name = name;
 	}
 
-	/**
-	 * 
-	 * @return uid
-	 */
-	public long getUid() {
-		return uid;
-	}
-
-	/**
-	 * 
-	 * @return username
-	 */
-	public String getUsername() {
-		return username;
-	}
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid='" + uid + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
