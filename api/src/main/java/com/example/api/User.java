@@ -8,19 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Entity
+@Getter
 @Table(name = "users")
 public class User implements Serializable {
 
 	@Id
-	@Getter
-	@Setter
 	@Column(name = "uid")
 	private long uid;
-	@Getter
-	@Setter
 	@Column(name = "name")
 	private String name;
 

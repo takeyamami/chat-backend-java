@@ -13,33 +13,23 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Entity
+@Getter
 @Table(name = "talks")
 public class Talk implements Serializable {
 
 	@Id
-	@Getter
-	@Setter
 	@Column(name = "tid")
 	private long tid;
-	@Getter
-	@Setter
 	@Column(name = "rid")
 	private long rid;
-	@Getter
-	@Setter
 	@Column(name = "message")
 	private String message;
-	@Getter
-	@Setter
     @Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_at")
 	private Date created_at;
 
-	@Getter
-	@Setter
 	@OneToOne
 	@JoinColumn(name="uid", insertable=false, updatable=false)
 	private User user;
