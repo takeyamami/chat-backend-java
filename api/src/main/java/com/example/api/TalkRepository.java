@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface TalkRepository extends JpaRepository<Talk, Integer> {
     
-    @Query("SELECT t FROM Talk t INNER JOIN t.user u ORDER BY t.created_at")
+    @Query("SELECT t FROM Talk t INNER JOIN t.user u WHERE t.rid = :rid ORDER BY t.created_at")
     public List<Talk> findTalkMessage(Long rid);
 }
