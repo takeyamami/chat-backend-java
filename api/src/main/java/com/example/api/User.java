@@ -8,8 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Setter
 @Getter
 @Table(name = "users")
 public class User implements Serializable {
@@ -41,7 +43,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "user {" +
                 "uid='" + uid + '\'' +
                 ", name='" + name + '\'' +
                 '}';

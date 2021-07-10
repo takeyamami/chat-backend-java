@@ -17,7 +17,7 @@ public class TalkController {
 	private TalkRepository talkRepository;
 
 	@GetMapping("talk/list/{id}")
-	public List<Object> findTalks(@PathVariable("id") Long rid) {
+	public List<Talk> findTalks(@PathVariable("id") Long rid) {
 		return talkRepository.findTalkMessage(rid);
 	}
 
