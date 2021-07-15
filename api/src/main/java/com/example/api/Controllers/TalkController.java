@@ -1,6 +1,9 @@
-package com.example.api;
+package com.example.api.Controllers;
 
 import java.util.List;
+
+import com.example.api.Entity.Talk;
+import com.example.api.Repositories.TalkRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
