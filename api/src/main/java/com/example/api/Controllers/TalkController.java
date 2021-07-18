@@ -26,7 +26,9 @@ public class TalkController {
 
 	@PostMapping("talk/create")
 	public Talk save(@RequestBody Talk talk) {
-		return talkRepository.save(talk);
+		Talk talkObject = new Talk(talk.getRid(), talk.getUid(), talk.getMessage());
+
+		return talkRepository.saveAndFlush(talkObject);
 	}
 
 }

@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -22,10 +24,13 @@ import lombok.Setter;
 public class Talk implements Serializable {
 
 	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "tid")
 	private long tid;
 	@Column(name = "rid")
 	private long rid;
+	@Column(name = "uid")
+	private long uid;
 	@Column(name = "message")
 	private String message;
     @Temporal(TemporalType.TIMESTAMP)
@@ -43,6 +48,7 @@ public class Talk implements Serializable {
 	public Talk() {
 		this.tid = 0;
 		this.rid = 0;
+		this.uid = 0;
 		this.message = "";
 		this.created_at = new Date();
 		this.user = new User();
@@ -51,18 +57,15 @@ public class Talk implements Serializable {
 	/**
 	 * コンストラクタ
 	 * 
-	 * @param tid
 	 * @param rid
+	 * @param uid
 	 * @param message
-	 * @param created_at
-	 * @param user
 	 */
-	public Talk(long tid, long rid, String message, Date created_at, User user) {
-		this.tid = tid;
+	public Talk(long rid, long uid, String message) {
 		this.rid = rid;
+		this.uid = uid;
 		this.message = message;
-		this.created_at = created_at;
-		this.user = user;
+		this.created_at = new Date();
 	}
 
     @Override
@@ -70,6 +73,7 @@ public class Talk implements Serializable {
         return "Talk{" +
                 "tid='" + tid + '\'' +
                 ", rid='" + rid + '\'' +
+                ", uid='" + uid + '\'' +
                 ", message='" + message + '\'' +
                 ", created_at='" + created_at + '\'' +
                 ", user='" + user + '\'' +
