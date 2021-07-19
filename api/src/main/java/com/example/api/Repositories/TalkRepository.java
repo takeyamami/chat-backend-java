@@ -9,6 +9,12 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface TalkRepository extends JpaRepository<Talk, Integer> {
     
+    /**
+     * ルームIDを指定してメッセージを取得
+     * 
+     * @param rid ルームID
+     * @return トークデータリスト
+     */
     @Query("SELECT t FROM Talk t INNER JOIN t.user u WHERE t.rid = :rid ORDER BY t.created_at")
     public List<Talk> findTalkMessage(Long rid);
 }
