@@ -1,1 +1,1 @@
-# chat-backend-java
+# chat-java
