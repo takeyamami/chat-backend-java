@@ -14,8 +14,12 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+<<<<<<< HEAD
 	implementation 'org.thymeleaf:thymeleaf-spring4:3.0.9.RELEASE'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+=======
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+>>>>>>> bf9c401033d5596a816b6bc4bd5061ce1a1f2480
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
