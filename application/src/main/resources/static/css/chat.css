@@ -1,0 +1,212 @@
+ html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100% /* 2 */;
+ }
+ body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    color: #3d4245;
+    padding-bottom: 100px;
+ }
+ #wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+ }
+ #main {
+    display: flex;
+    flex: 1 0 auto;
+ }
+ #menu {
+    display: block;
+    width: 240px;
+    flex: 1 0 auto;
+    margin-top: 12px;
+ }
+ #menu .sidebar-index {
+    flex: 1 0 auto;
+    margin-top: 12px;
+ }
+ #menu .sidebar-index .roomList {
+    border-top: 1px solid #dde5e8;
+    border-bottom: 1px solid #dde5e8;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+ }
+ #menu .text {
+    font-size: 18px;
+    position: relative;
+ }
+ #menu .text.userInfo {
+    font-size: 10px;
+    display: block;
+    position: relative;
+    color: #3d4245;
+    line-height: 1.25;
+    padding: 16px 8px 16px 30px;
+    border-radius: 0 4px 4px 0;
+    white-space: nowrap;
+    -webkit-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+ }
+ #menu .text.userInfo .name {
+    font-size: 18px;
+    font-weight: 400;
+ }
+ #menu .btnArea {
+    display: block;
+    position: relative;
+    color: #3d4245;
+    line-height: 1.25;
+    padding-left: 30px;
+    border-radius: 0 4px 4px 0;
+    white-space: nowrap;
+    -webkit-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+ }
+ #menu .btnArea .lineBtn {
+    text-decoration: none;
+    border: 1px solid #3392ff;
+    color: #3392ff;
+    background-color: #ffffff;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: 0.5rem;
+    line-height: 30px;
+ }
+ #menu .text>a {
+    border-bottom: none!important;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    color: #3d4245;
+    line-height: 1.25;
+    padding: 16px 8px 16px 56px;
+    border-radius: 0 4px 4px 0;
+    white-space: nowrap;
+    -webkit-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+ }
+ #menu .text a:hover {
+     background-color:rgba(56,72,88,.08);
+ }
+ #menu .text.selected>a {
+    box-shadow: inset 5px 0 0 #242527;
+    font-weight: 700;
+    background: rgba(56,72,88,.08);
+ }
+ #menu .link {
+   font-size: 16px;
+   font-weight: 400;
+ }
+ #menu .link>a {
+   display: block;
+   position: relative;
+   color: #0bdaa6;
+   line-height: 1.25;
+   padding: 8px 8px 16px 30px;
+   border-radius: 0 4px 4px 0;
+   white-space: nowrap;
+   -webkit-text-overflow: ellipsis;
+   text-overflow: ellipsis;
+   overflow: hidden;
+ }
+ 
+ #contents {
+    display: block;
+    margin: 0 32px 32px;
+    padding-top: 24px;
+    width: 100%;
+    min-width: 0;
+ }
+ #contents .talk {
+     padding: 10 0 10 0;
+     max-width: 1000px;
+ }
+ #contents .talk-me .message {
+     position: relative;
+     margin-left: 300px;
+     margin-right: 100px;
+     padding: 1.2em;
+     background: -webkit-gradient(linear, left top, left bottom, from(#c1deff), to(#ebedee));
+     background: -webkit-linear-gradient(top, #c1deff 0%, #acd3ff 100%);
+     background: linear-gradient(to bottom, #c1deff 0%, #acd3ff 100%); 
+     border-radius: 5px;
+     word-break: break-all;
+ }
+ #contents .talk-me .name {
+     margin-left: 300px;
+     font-size: 13px;
+     text-align: left;
+ }
+ #contents .talk-me .time {
+     margin-left: 300px;
+     margin-right: 100px;
+     font-size: 13px;
+     text-align: right;
+ }
+ #contents .talk-other .message {
+     color: #444;
+     position: relative;
+     margin-left: 100px;
+     margin-right: 300px;
+     padding: 1.2em;
+     background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ebedee));
+     background: -webkit-linear-gradient(top, #eee 0%, #dbdbdb 100%);
+     background: linear-gradient(to bottom, #eee 0%, #dbdbdb 100%); 
+     border-radius: 5px;
+     word-break: break-all;
+ }
+ #contents .talk-other .name {
+     margin-left: 100px;
+     font-size: 13px;
+     text-align: left;
+ }
+ #contents .talk-other .time {
+     margin-left: 100px;
+     margin-right: 300px;
+     font-size: 13px;
+     text-align: right;
+ }
+ #contents #form  {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 10 0 10 100;
+    display: flex;
+    background-color: rgba(158, 158, 158, 0.5);
+ }
+ #contents #form .message {
+     padding: 10px;
+     width: 50%;
+     line-height: 1.2em;
+ }
+ #contents #form .submitBtn {
+    color: #ffffff;
+    background-color: #3392ff;
+    width: 100px; 
+    height: 40px;
+    margin-top: 7px;
+    margin-left: 15px;
+    padding-left: 10px;
+    text-align: center;
+ }
+ #contents #form .submitBtn:before {
+    color: #ffffff;
+     content:"";
+     margin-top: 10px;
+     margin-left: -10px;
+     margin-right: 5px;
+     display:inline-block;
+     width:1em;
+     height:1em;
+     background:url(/imageFile/chat/icon_send.svg) no-repeat;
+     background-size:contain;
+ }
