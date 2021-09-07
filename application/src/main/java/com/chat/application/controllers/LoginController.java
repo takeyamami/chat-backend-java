@@ -10,8 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 
     @RequestMapping("/login")
-    public String login(ModelMap modelMap) {
-//        modelMap.addAttribute("rid", rid);
+    public String index(ModelMap modelMap) {
         return "login";
+    }
+
+    @PostMapping("/login/action")
+    public String action(ModelMap modelMap) {
+
+
+        return "chat";
     }
 }
