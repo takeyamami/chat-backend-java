@@ -15,9 +15,11 @@ public class LoginController {
     }
 
     @PostMapping("/login/action")
-    public String action(ModelMap modelMap) {
+    public String action(@RequestParam("email")String email,@RequestParam("password")String password, ModelMap modelMap) {
+        if (email.equals("") || password.equals("")) {
+            return "login";
+        }
 
-
-        return "chat";
+        return "redirect:/chat";
     }
 }
