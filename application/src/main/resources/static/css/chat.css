@@ -207,6 +207,6 @@
      display:inline-block;
      width:1em;
      height:1em;
-     background:url(/imageFile/chat/icon_send.svg) no-repeat;
+     background:url(../imageFile/chat/icon_send.svg) no-repeat;
      background-size:contain;
  }
