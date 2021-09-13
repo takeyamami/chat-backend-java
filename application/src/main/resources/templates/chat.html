@@ -1,1 +1,123 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <title>chat</title>    <link th:href="@{/css/global.css}" rel="stylesheet">    <link th:href="@{/css/chat.css}" rel="stylesheet"></head><body><div id="wrapper">    <div id="main">        <div id="menu">            <ul class="sidebar-index">                <li class="text userInfo"><span class="name">yammer</span>さん<p th:text="${email}"></p></p></li>                <li class="btnArea"><a href="/logout" class="btn lineBtn">ログアウト</a></li>                <li>                    <ul class="roomList">                        <li class="text selected"><a href="/chat/1">talk1</a></li>                        <li class="text"><a href="/chat/2">talk__2</a></li>                        <li class="text"><a href="/chat/3">トーーーク３</a></li>                        <li class="text"><a href="/chat/6">ぼぼぼぼーう</a></li>                        <li class="link"><a href="/room" class="link">+ ルーム追加</a></li>                    </ul>                </li>            </ul>        </div>        <div id="contents">            <h1>talk1</h1>            <div class="talk talk-me">                <div class="name">yammer</div>                <div class="message">                    <p>こんにちは</p>                </div>                <div class="time">2021-06-15 13:36:36</div>            </div><div class="talk talk-me">            <div class="name">yammer</div>            <div class="message">                <p>aaa</p>            </div>            <div class="time">2021-06-18 14:11:02</div>        </div><div class="talk talk-me">            <div class="name">yammer</div>            <div class="message">                <p>ぽぴぽぴ<br>                    ぽぴ</p>            </div>            <div class="time">2021-06-18 14:11:13</div>        </div><div class="talk talk-me">            <div class="name">yammer</div>            <div class="message">                <p>あああ</p>            </div>            <div class="time">2021-06-18 14:12:55</div>        </div><div class="talk talk-other">            <div class="name">yamamo</div>            <div class="message">                <p>こんにちは<br>                    ぱぱぱ＠」</p>            </div>            <div class="time">2021-07-13 13:00:40</div>        </div><div class="talk talk-other">            <div class="name">yamamo</div>            <div class="message">                <p>はろうはろうはろう</p>            </div>            <div class="time">2021-07-13 13:00:48</div>        </div><div class="talk talk-other">            <div class="name">yamamo</div>            <div class="message">                <p>うんぽぽぽ</p>            </div>            <div class="time">2021-07-13 13:00:53</div>        </div><div class="talk talk-other">            <div class="name">momimomi</div>            <div class="message">                <p>popoppppoaoijsadij;flkja;lsk</p>            </div>            <div class="time">2021-07-13 13:01:18</div>        </div><div class="talk talk-other">            <div class="name">momimomi</div>            <div class="message">                <p>わわわわーーーい</p>            </div>            <div class="time">2021-07-13 13:01:33</div>        </div><div class="talk talk-other">            <div class="name">momimomi</div>            <div class="message">                <p>ああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>            </div>            <div class="time">2021-07-13 13:01:39</div>        </div><div class="talk talk-me">            <div class="name">yammer</div>            <div class="message">                <p>aaaaaaaaaaaaaaa</p>            </div>            <div class="time"></div>        </div><div class="talk talk-me">            <div class="name">yammer</div>            <div class="message">                <p>aaaaaaaaaaaa</p>            </div>            <div class="time">2021-07-18 16:22:30</div>        </div><div class="talk talk-me">            <div class="name">yammer</div>            <div class="message">                <p>aaaaaaaaaaaaaaaaaaaa</p>            </div>            <div class="time">2021-07-18 16:22:52</div>        </div>            <form method="POST" action="/chat/post">                <div id="form">                    <input type="hidden" name="_token" value="umQQJItfCFtUBhzuf7ZzAYcjcXKpuPETHUGgkEDo">                    <textarea class="message" name="message" rows="2" cols="100" maxlength="1000"></textarea>                    <input type="hidden" name="rid" value="1">                    <button class="btn submitBtn" type="submit">送信</button>                </div>            </form>        </div>    </div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat</title>
+    <link th:href="@{/css/global.css}" rel="stylesheet">
+    <link th:href="@{/css/chat.css}" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+    <div id="main">
+        <div id="menu">
+            <ul class="sidebar-index">
+                <li class="text userInfo"><span class="name">yammer</span>さん<p th:text="${email}"></p></p></li>
+                <li class="btnArea"><a href="/logout" class="btn lineBtn">ログアウト</a></li>
+                <li>
+                    <ul class="roomList">
+
+                        <li class="text selected"><a href="/chat/1">talk1</a></li>
+                        <li class="text"><a href="/chat/2">talk__2</a></li>
+                        <li class="text"><a href="/chat/3">トーーーク３</a></li>
+                        <li class="text"><a href="/chat/6">ぼぼぼぼーう</a></li>
+                        <li class="link"><a href="/room" class="link">+ ルーム追加</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="contents">
+            <h1>talk1</h1>
+            <div class="talk talk-me">
+                <div class="name">yammer</div>
+                <div class="message">
+                    <p>こんにちは</p>
+                </div>
+                <div class="time">2021-06-15 13:36:36</div>
+            </div><div class="talk talk-me">
+            <div class="name">yammer</div>
+            <div class="message">
+                <p>aaa</p>
+            </div>
+            <div class="time">2021-06-18 14:11:02</div>
+        </div><div class="talk talk-me">
+            <div class="name">yammer</div>
+            <div class="message">
+                <p>ぽぴぽぴ<br>
+                    ぽぴ</p>
+            </div>
+            <div class="time">2021-06-18 14:11:13</div>
+        </div><div class="talk talk-me">
+            <div class="name">yammer</div>
+            <div class="message">
+                <p>あああ</p>
+            </div>
+            <div class="time">2021-06-18 14:12:55</div>
+        </div><div class="talk talk-other">
+            <div class="name">yamamo</div>
+            <div class="message">
+                <p>こんにちは<br>
+                    ぱぱぱ＠」</p>
+            </div>
+            <div class="time">2021-07-13 13:00:40</div>
+        </div><div class="talk talk-other">
+            <div class="name">yamamo</div>
+            <div class="message">
+                <p>はろうはろうはろう</p>
+            </div>
+            <div class="time">2021-07-13 13:00:48</div>
+        </div><div class="talk talk-other">
+            <div class="name">yamamo</div>
+            <div class="message">
+                <p>うんぽぽぽ</p>
+            </div>
+            <div class="time">2021-07-13 13:00:53</div>
+        </div><div class="talk talk-other">
+            <div class="name">momimomi</div>
+            <div class="message">
+                <p>popoppppoaoijsadij;flkja;lsk</p>
+            </div>
+            <div class="time">2021-07-13 13:01:18</div>
+        </div><div class="talk talk-other">
+            <div class="name">momimomi</div>
+            <div class="message">
+                <p>わわわわーーーい</p>
+            </div>
+            <div class="time">2021-07-13 13:01:33</div>
+        </div><div class="talk talk-other">
+            <div class="name">momimomi</div>
+            <div class="message">
+                <p>ああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+            </div>
+            <div class="time">2021-07-13 13:01:39</div>
+        </div><div class="talk talk-me">
+            <div class="name">yammer</div>
+            <div class="message">
+                <p>aaaaaaaaaaaaaaa</p>
+            </div>
+            <div class="time"></div>
+        </div><div class="talk talk-me">
+            <div class="name">yammer</div>
+            <div class="message">
+                <p>aaaaaaaaaaaa</p>
+            </div>
+            <div class="time">2021-07-18 16:22:30</div>
+        </div><div class="talk talk-me">
+            <div class="name">yammer</div>
+            <div class="message">
+                <p>aaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            <div class="time">2021-07-18 16:22:52</div>
+        </div>
+            <form method="POST" action="/chat/action">
+                <div id="form">
+                    <textarea class="message" name="message" rows="2" cols="100" maxlength="1000"></textarea>
+                    <input type="hidden" name="rid" value="1">
+                    <button class="btn submitBtn" type="submit">送信</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
