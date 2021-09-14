@@ -22,6 +22,6 @@ public class ChatController {
     @PostMapping("/chat/action")
     public String action(@RequestParam("rid")Integer rid,@RequestParam("message")String message,ModelMap modelMap) {
 
-        return "redirect:../chat";
+        return "redirect:/chat";
     }
 }
