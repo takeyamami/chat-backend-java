@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ChatController {
 
     @RequestMapping("/chat")
-    public String chat(@CookieValue("email", required=false) String email, ModelMap modelMap) {
-        modelMap.addAttribute("email", email);
-
+    public String chat(ModelMap modelMap) {
         return "chat";
     }
 
@@ -29,6 +27,6 @@ public class ChatController {
     @PostMapping("/chat/action")
     public String action(@RequestParam("rid")Integer rid,@RequestParam("message")String message,ModelMap modelMap) {
 
-        return "redirect:/chat";
+        return "redirect:/chat/" + rid;
     }
 }
