@@ -1,4 +1,4 @@
-package com.chat.application.controllers;
+package com.chat.application.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
