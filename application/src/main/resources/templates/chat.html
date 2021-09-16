@@ -26,7 +26,7 @@
             </ul>
         </div>
         <div id="contents">
-            <h1>talk1</h1>
+            <h1 th:if="${rid > 0}">talk1</h1>
             <div class="talk talk-me">
                 <div class="name">yammer</div>
                 <div class="message">
@@ -109,7 +109,7 @@
             <div class="time">2021-07-18 16:22:52</div>
         </div>
             <form th:action="@{/chat/action}" method="post">
-                <div id="form">
+                <div id="form" th:if="${rid > 0}">
                     <textarea class="message" name="message" rows="2" cols="100" maxlength="1000"></textarea>
                     <input type="hidden" name="rid" th:value="${rid}">
                     <button class="btn submitBtn" type="submit">送信</button>

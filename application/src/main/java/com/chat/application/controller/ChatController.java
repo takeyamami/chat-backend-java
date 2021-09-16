@@ -17,7 +17,7 @@ public class ChatController {
     }
 
     @RequestMapping("/chat/{rid}")
-    public String chat(ModelMap modelMap, @PathVariable("rid") String rid) {
+    public String chat(ModelMap modelMap, @PathVariable("rid") Integer rid) {
         // Modelsを実装して、ダミーリストを作って画面に表示
         modelMap.addAttribute("rid", rid);
 
@@ -26,6 +26,7 @@ public class ChatController {
 
     @PostMapping("/chat/action")
     public String action(@RequestParam("rid")Integer rid,@RequestParam("message")String message,ModelMap modelMap) {
+        modelMap.addAttribute("rid", rid);
 
         return "redirect:/chat/" + rid;
     }
