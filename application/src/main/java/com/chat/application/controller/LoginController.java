@@ -9,8 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/login")
+    @RequestMapping("/")
     public String index(ModelMap modelMap) {
+        // ログイン情報があるかどうかで出し分けたい
+        return "redirect:/login";
+    }
+
+    @RequestMapping("/login")
+    public String login(ModelMap modelMap) {
         return "login";
     }
 
