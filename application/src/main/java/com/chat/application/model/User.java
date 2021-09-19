@@ -5,9 +5,7 @@ public class User {
     private String name;
     private String email;
 
-    public Integer getUid() {
-        return this.uid;
-    }
+    public Integer getUid() { return this.uid; }
 
     public String getName() {
         return this.name;
