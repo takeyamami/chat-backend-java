@@ -1,8 +1,13 @@
 package com.chat.application.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class Talk {
     private Integer rid;
     private Integer uid;
+    @NotBlank
+    @Size(max = 2000)
     private String message;
 
     public Integer getRid() {
