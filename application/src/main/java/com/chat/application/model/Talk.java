@@ -1,9 +1,17 @@
 package com.chat.application.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+@Entity
 public class Talk {
+
+    @Id
+    @GeneratedValue
+    private Integer tid;
     private Integer rid;
     private Integer uid;
     @NotBlank
